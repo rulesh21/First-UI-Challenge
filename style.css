@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family-Inter:wght@7006family-Manrope:wght@200;500;7005display-swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Manrope:wght@200;500;700&display=swap');
 
 /* font-family: 'Manrope', sans-serif; */
 
@@ -54,6 +54,7 @@ img{
 .card{
     width: 25.16rem;
     border-radius: 10px;
+    background: white;
 }
 
 .card-image{
@@ -75,7 +76,7 @@ img{
 .card-user{
     position: relative;
     width: 100%;
-    padding: 20px 0;
+    padding: 0px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,6 +86,7 @@ img{
     display: flex;
     align-items: center;
 }
+
 .user > img{
     width: 40px;
     height: 40px;
@@ -99,3 +101,102 @@ img{
 .user-info > p:last-child{
     font-weight: 100;
 }
+
+.icon-share{
+    position: relative;
+    z-index: 5;
+    background: var(--Light-Grayish-Blue);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icon-share:hover .i-share{ 
+    fill: var(--Light-Grayish-Blue);
+    transition: shareAnimation .2s linear; 
+}
+
+@keyframes shareAnimation{
+    from{}
+    to{
+        transform: translateX(1px);
+    }
+}
+
+.icon-share:hover{
+    background: var(---Very-Dark-Grayish-Blue);
+    transition: background 100ms linear;
+}
+
+.network {
+    position: absolute;
+    top : 5px;
+    left: -32px;
+    width: 25rem;
+    height: 75px;
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    background: var(---Very-Dark-Grayish-Blue);
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.network p{
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--Grayish-Blue);
+    margin-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.icons-network a svg{
+    font-size: 1.7rem;
+    margin: auto 0.7rem;
+}
+
+@media(min-width: 1024px) {
+
+    .card{
+        width: 730px;
+        height: 280px;
+        display: flex;
+        background: white;   
+    }
+
+    .card-image{
+        overflow: hidden;
+        flex: 1 0 285px;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .card-image > img{
+        width: 120%;
+    }
+
+    .card-user{
+        margin-bottom: 100px;
+    }
+
+    .network{
+        width: 22rem;
+        height: 50px;
+        top: -60px;
+        left: 59%;
+        border-radius: 10px;
+        justify-content: center;
+    }
+
+    .network::after {
+        content: '';
+        position: absolute;
+        top: 52px;
+        display: block;
+        border-width: 15px;
+        border-style: solid;
+        border-color: var(---Very-Dark-Grayish-Blue) transparent transparent;
+    }
+
+} 
